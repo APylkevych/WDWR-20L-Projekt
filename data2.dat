@@ -1,0 +1,29 @@
+data;
+
+param M := 3; # liczba maszyn
+param N := 5; # liczba czesci
+
+param efficiency: # wydajnosc [num/h]
+		1		2		3		4		5	:=
+	1	0.85	1.30	0.65	1.50	0.40
+	2	0.65	0.80	0.55	1.50	0.70
+	3	1.20	0.95	0.35	1.70	0.40;
+
+param C :=	1 60 # minimalne ilosci wyprodukowanych czesci
+			2 60  
+			3 60
+			4 120
+			5 120;
+			
+			
+
+set K := 1 2;
+
+param eps := 0.000001;
+
+param lambda := 1;
+
+param beta := 0.001;
+
+read {m in 1..3} R_exp[m] < Exp.txt;
+read {i in 1..1000, m in 1..M} R[i,m] < Scenarios.txt;

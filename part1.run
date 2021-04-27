@@ -1,0 +1,20 @@
+reset;
+
+model part1.mod;
+data data1.dat;
+
+option solver cplex;
+
+
+solve;
+
+
+display bool[1], bool[2], bool[3], total_cost, c[1], c[2], c[3], c[4], c[5];
+
+display gen_t[1], gen_t[2], gen_t[3];
+
+display t_mach_comp[3,1], t_mach_comp[3,2], t_mach_comp[3,3], t_mach_comp[3,4], t_mach_comp[3,5];
+
+	
+printf "%f\t%f\t%f\t%f\t%f\n", total_cost, gen_t[1], gen_t[2], gen_t[3] > PArt1.txt;
+
